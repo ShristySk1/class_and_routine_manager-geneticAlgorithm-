@@ -1,0 +1,91 @@
+<div th:replace="admin/shared/header2"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <center>
+    <section class="content">
+        	<div class="row">
+<!--                    <h2>Profile</h2>-->
+<div class="col-md-2"></div>
+      <center> <div class="col-md-7 ">
+
+<div class="panel panel-default">
+  <div class="panel-heading">  <h4 >Courses Details</h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+          
+               
+           
+    
+               <div class="col-sm-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Course Name</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="courses :  ${Courses}">
+                                            
+                                                <td><span th:text="${courses.coursesId}"></span></td>
+                                                <td><span th:text="${courses.coursesName}"></span></td>
+                                                <td> <a th:href="@{/user/courses/courseSubject/{id}(id=${courses.coursesId})}" class="btn btn-primary">View Subjects</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                    <!-- /input-group -->
+                                </div>
+
+
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+       
+            
+    </div> 
+    </div>
+      </center>
+</div>  
+    <script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+              </script> 
+       
+<!----------------------------------------------------<sidebar>-----------              -->
+              
+
+	
+<!--<-----------------------------------------------------</sidebar>-----------------      -->
+       
+       
+       
+       
+       
+       
+ 
+    </section>
+    </center>
+  </div>
+<div th:replace="admin/shared/footer"></div>

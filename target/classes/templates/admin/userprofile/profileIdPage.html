@@ -1,0 +1,111 @@
+<div th:replace="admin/shared/header"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <section class="content">
+        	<div class="row">
+<!--                    <h2>Profile</h2>-->
+        
+       <div class="col-md-12 ">
+
+<div class="panel panel-default">
+  <div class="panel-heading">  <h4 >Teacher Profile</h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+            <div class="box-body">
+                     <div class="col-sm-12">
+                    
+    
+              <!-- /input-group -->
+            </div>
+            
+            <div class="clearfix"></div>
+          <!--  <hr style="margin:5px 0 5px 0;">-->
+    
+            <div class="col-md-12">
+                <div class="table-responsive">
+                
+                                    <table class="table">
+                                        
+                                           <div th:each="teacher : ${oneTeacher}">
+                                            
+                                               <tr>
+                                                <th>Id</th>
+                                                <td><span th:text="${teacher.teacherId}"></span></td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <th>Teacher Name</th>
+                                                 <td><span th:text="${teacher.teacherName}"></span></td>
+                                              </tr>
+                                              <tr>
+                                                <th>Teacher Email</th>
+                                                 <td><span th:text="${teacher.teacherEmail}"></span></td>
+                                              </tr>
+                                              <tr>
+                                                <th>Teacher Contact</th>
+                                                 <td><span th:text="${teacher.teacherContact}"></span></td>
+                                              </tr>
+                                              <tr>
+                                                <th>Teacher Type</th>
+                                                 <td><span th:text="${teacher.teacherType}"></span></td>
+                                              </tr>
+                                              <tr>
+                                                <th>Teacher Status</th>
+                                                  <td><span th:text="${teacher.status}"></span></td>
+                                              </tr>
+                                           </div>
+                                         </table>
+                </div>
+
+
+                                    <!-- /input-group -->
+                                </div>  
+
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+       
+            
+    </div> 
+    </div>
+</div>  
+    <script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+              </script> 
+       
+
+              
+  
+	</div>     
+
+       
+       
+       
+       
+       
+       
+   
+ 
+    </section>
+  </div>
+<div th:replace="admin/shared/footer"></div>

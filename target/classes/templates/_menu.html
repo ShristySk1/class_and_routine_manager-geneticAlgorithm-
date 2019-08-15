@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+
+<div xmlns:th="http://www.thymeleaf.org"
+     style="border: 1px solid #ccc;padding:10px;margin-bottom:20px;background-color:#2C3335;">
+
+    <a th:href="@{/}" style="text-decoration:none;color:#DAE0E2;">Home</a>
+
+    | &nbsp;
+
+    <a th:href="@{/userInfo}"  style="text-decoration:none;color:#DAE0E2;">User Info</a>
+
+    | &nbsp;
+
+    <a th:href="@{/admin}" style="text-decoration:none;color:#DAE0E2;">Admin</a>
+
+    | &nbsp;
+
+    <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Logout</a>
+
+</div>

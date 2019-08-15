@@ -1,0 +1,329 @@
+<div th:replace="admin/shared/header2"></div>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Teacher</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Info boxes -->
+     <div class="row">
+        <!-- Left col -->
+        <div class="col-md-8">
+          <!-- MAP & BOX PANE -->
+
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Class Routines</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  <thead>
+                  <tr>
+                    <th>Semester</th>
+                    <th>Routines</th>
+                 
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      
+                    <td>
+                      1
+                    </td>
+                  <td><a th:href="@{/user/semRoutine/{id}(id=1)}">View</a></td>
+                  </tr>
+                <tr>
+                      
+                    <td>
+                      2
+                    </td>
+                   <td><a th:href="@{/user/semRoutine/{id}(id=2)}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      3
+                    </td>
+                      <td><a th:href="@{/user/semRoutine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      4
+                    </td>
+                   <td><a th:href="@{/user/semRoutine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      5
+                    </td>
+               <td><a th:href="@{/user/semRoutine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      6
+                    </td>
+                <td><a th:href="@{/user/semRoutine}">View</a></td>
+                  </tr>
+                 
+               
+                 
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.table-responsive -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             
+            <a th:href="@{/user/routine}" class="btn btn-sm btn-default btn-flat pull-right">View All Routines</a>
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+<!--          <to do list>-->
+              <div class="box box-primary">
+            <div class="box-header">
+              <i class="ion ion-android-clipboard"></i>
+
+              <h3 class="box-title">NOTICE</h3>
+
+              <div class="box-tools pull-right">
+                <ul class="pagination pagination-sm inline">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.box-header -->
+             <div class="box-body">
+              <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+              <ul class="todo-list" th:each="todo : ${todolist}">
+                <li>
+                  <!-- drag handle -->
+                  <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <!-- checkbox -->
+                 
+                  <!-- todo text -->
+                  <span class="text" th:text="${todo.listNotice}"></span>
+                  <!-- Emphasis label -->
+                  <big class="label label-danger"><i class="fa fa-clock-o"></i><span th:text="${todo.createdDate}"></span></big>
+                  <!-- General tools such as edit or delete-->
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+              </div>
+<!--              </to do list>-->
+          
+<!--        <calender>-->
+<!--            <div class="box box-info">
+             <div class="box-header with-border">
+              <h3 class="box-title">Today's Date</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>   
+            <div class='calendar'>
+                <div class='date-header'>
+                    <span id='prev' class='time-skip'>prev</span>
+                    <div class='year-month'>
+                        <span class='month'></span>
+                        <span class='year'></span>
+                    </div>
+                    <span id='next' class='time-skip'>next</span>
+                </div>
+                <table class='days-body'>
+                    <thead>
+                        <tr class='days-row'>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody class='calendar-days'></tbody>
+                </table>
+                <form class='select-date'>
+                    <label for='month'>Go To: </label>
+                    <select name='month' id='month'>
+                        <option value=0>Jan</option>
+                        <option value=1>Feb</option>
+                        <option value=2>Mar</option>
+                        <option value=3>Apr</option>
+                        <option value=4>May</option>
+                        <option value=5>Jun</option>
+                        <option value=6>Jul</option>
+                        <option value=7>Aug</option>
+                        <option value=8>Sep</option>
+                        <option value=9>Oct</option>
+                        <option value=10>Nov</option>
+                        <option value=11>Dec</option>
+                    </select>
+                    <input type='number' min='1' id='year'>
+                </form>
+            </div>
+                </div>-->
+
+
+          
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-4">
+          <!-- Info Boxes Style 2 -->
+          <div class="info-box bg-yellow">
+            <span class="info-box-icon"><i class="fa fa-fw fa-book"></i></span>
+
+            <div class="info-box-content">
+                <a th:href="@{/user/courses}"  style="text-decoration: none;color:white;"><span class="info-box-text">Courses</span></a>
+              <span class="info-box-number" th:text="${cocount}"></span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+             
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+          <div class="info-box bg-green">
+            <span class="info-box-icon"><i class="fa fa-fw fa-book"></i></span>
+
+            <div class="info-box-content">
+                
+                <a th:href="@{/user/subjects}" style="text-decoration: none;color:white;"><span class="info-box-text">Subjects</span></a>
+              <span class="info-box-number" th:text="${subcount}"></span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 20%"></div>
+              </div>
+        
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box 
+          <div class="info-box bg-red">
+            <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Assignments</span>
+              <span class="info-box-number">123</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%"></div>
+              </div>
+              
+            </div>
+            <!-- /.info-box-content -->
+         
+          <!-- /.info-box -->
+          <div class="info-box bg-aqua">
+            <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Messages</span>
+              <span class="info-box-number" th:text="${count}"></span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 40%"></div>
+              </div>
+          
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+
+          
+          <!-- /.box -->
+
+          <!-- PRODUCT LIST -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Recent Messages</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <ul class="products-list product-list-in-box">
+                  <div th:each="msg: ${msges}">
+                      <div th:if="${msg.fromuser}!=${cuser}">
+                <li class="item">
+                  <div class="product-img">
+                    <img th:src="@{/img/default-50x50.gif}" alt="Product Image">
+                  </div>
+                  <div class="product-info">
+                    <a href="javascript:void(0)" class="product-title" th:text="${msg.fromuser}"> 
+                     </a>
+                    <span class="product-description" th:text="${msg.msgTxt}">
+                        
+                        </span>
+                       </li>
+                  </div>
+                  </div>
+                 </ul>
+                <!-- /.item -->
+                  </div>
+                <!-- /.item -->
+            
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer text-center">
+              <a href="/messages/user" class="uppercase">View All Messages</a>
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+<!--          <calender>-->
+              <div id='calendar-wrap' class='calendar-wrap'>
+	</div>
+<!--          </calender>-->
+          
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <div th:replace="admin/shared/footer"></div>

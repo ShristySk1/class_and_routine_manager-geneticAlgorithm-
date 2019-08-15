@@ -1,0 +1,228 @@
+<div th:replace="admin/shared/header2"></div>
+<!--<link href ="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href ="/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet"/>
+<script src="/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+
+   
+    <section class="content-header">
+        <h1>
+            Messages
+        </h1>
+    </section>
+
+
+    <section class="content" ng-show="views.list">
+        <div class="mailbox row">
+            <div class="col-xs-12">
+                <div class="box box-solid">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="row pad">
+                                    <div class="col-sm-6">
+                                       
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm btn-flat dropdown-toggle" data-toggle="dropdown">
+                                                Action <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="" >Mark Read</a></li>
+                                                <li><a href="" >Mark Unread</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="" >Remove</a></li>
+                                            </ul>
+                                        </div> 
+                                        </button>
+                                        <div class="btn-group"><button data-toggle="modal" data-target="#modal-default" class="btn btn-sm btn-flat btn-primary"><i class="fa fa-pencil"></i>Compose Message </button></div>
+                                    </div>
+                                    <div class="col-sm-6 search-form">
+
+                                        <form action="" class="text-right">
+                                            <div class="input-group pull-right floatRTL">
+                                                <input type="text" ng-model="searchText" class="form-control input-sm" placeholder="search">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-mailbox">
+                                        <thead>
+                                            <tr>
+                                                <th><h4><b>From</h4></b></th>
+                                                <th><h4><b>To</h4></b></th>
+                                                <th><h4><b>Message</h4></b></th>
+                                                <th> <th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody  <tr  th:each="msg : ${msges}"  dir-paginate="message in messages | filter:searchText | itemsPerPage:20" total-items="totalItems">
+                                            <p th:if="${msg.user}==${cuser}">
+                                            
+                                           <!-- <td class="small-col"><input name="checked[]" ng-model="message.selected" type="checkbox" /></td>
+                                           --><td>
+                                                <span th:if="${msg.user}!=${msg.fromuser}" th:text="${msg.fromuser}"></span>
+                                                <span th:if="${msg.user}==${msg.fromuser}" >You</span>
+                                            </td>
+                                            <td>
+                                                <span th:if="${msg.user}!=${msg.touser}" th:text="${msg.touser}"></span>
+                                                <span th:if="${msg.user}==${msg.touser}" >You</span>
+                                            </td>
+                                                <td style=" display:block; max-width: 200px" class="subject" th:text="${msg.msgTxt}"></td>
+                                                 <td> <button data-toggle="modal" data-target="#modal-default" class="btn btn-sm btn-flat btn-primary">Reply </button></td>
+                                            
+                               
+                                               
+                                             
+                                            
+                                    </p>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="bg-modal">
+                         <div class="model-content">
+                             <div class="close">+</div>
+                             <form action="">
+                                 <input type="text" placeholder="username">
+                                 <input type="text" placeholder="message">
+                                 <a href="" class="button">Send</a>
+                             </form>
+                         </div>
+                     </div>-->
+
+
+                    <div class="modal fade" id="modal-default">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Send Message</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" th:action="@{/messages/send/user}" th:object="${messages}" >
+                                        <input style="width:50%;
+                                               
+                                               display:block;
+                                               margin: 15px auto;" type="text" placeholder="Username" name="username">
+                                        <textarea style="
+                                               width:50%;
+                                               height:200px;
+                                               display:block;
+                                               margin: 15px auto;
+                                               " type="text" placeholder="Message" name="message"></textarea>
+                                               <button type="submit" class="btn btn-primary">Send</button>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                    
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+
+                    <!-- <script>
+                         document.getElementById('message').addEventListener('click',function(){
+                               document.querySelector('.bg-modal').style.display='flex';
+                         });
+                                    
+                            
+                              document.querySeletor('.close').addEventListener('click',function(){
+                                  document.querySelector('.bg-modal').style.display='none';
+                                  
+                              });
+                             
+                         
+                         
+                     </script>-->
+                    <!--    <div class="box-footer clearfix">
+                            <div class="pull-right">
+                                <dir-pagination-controls class="pull-right" on-page-change="pageChanged(newPageNumber)" template-url="templates/dirPagination.html" ></dir-pagination-controls>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+          
+          <section class="content" ng-show="views.read">
+                  <a ng-click="changeView('list')" class="floatRTL btn btn-success btn-flat pull-right marginBottom15">Return</a> 
+                  <div class="clearfix"></div>
+                  <div class="box box-success">
+              <div class="box-header">
+                  <i class="fa fa-comments-o"></i>
+                  <h3 class="box-title">{{messageDet.fullName}}</h3>
+              </div>
+              <div class="box-body chat" id="chat-box" chat-box>
+                  <p id="loadOld" class="text-muted well well-sm no-shadow text-center" ng-click="loadOld()">{{phrase.loadOldMessages}}</p>
+                  <div class="item messageItem" ng-repeat="messageOne in message">
+                      <img ng-if="messageOne.photo == ''" ng-src="uploads/profile/user.png" alt="{{messageOne.fullname}}"/>
+                      <img ng-if="messageOne.photo != ''" ng-src="{{'uploads/profile/'+messageOne.photo}}" alt="{{messageOne.fullname}}"/>
+                      <p class="message">
+                          <a href="" class="name">
+                              <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{messageOne.dateSent * 1000 | date:'medium'}}</small>
+                              {{messageOne.fullName}}
+                          </a>
+                         {{messageOne.messageText}}
+                      </p>
+                  </div>
+              </div>
+              <div class="box-footer">
+                  <div class="input-group">
+                      <input class="form-control" ng-enter="replyMessage()" ng-disabled="form.disable" ng-model="form.reply" placeholder="{{phrase.typeReply}}">
+                      <div class="input-group-btn">
+                          <button class="btn btn-success" ng-click="replyMessage()"><i class="fa fa-plus"></i></button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </section>
+          
+          <section class="content" ng-show="views.create">
+            <a ng-click="changeView('list')" class="floatRTL btn btn-danger btn-flat pull-right marginBottom15">Return</a>  
+            <div class="box col-xs-12">
+              <div class="box-header">
+                  <h3 class="box-title">Send Message</h3>
+              </div>
+              <div class="box-body table-responsive">
+                <form class="form-horizontal" name="sendMessage" role="form" ng-submit="sendMessageNow()" novalidate>
+                  <div class="form-group" ng-class="{'has-error': sendMessage.toId.$invalid}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{phrase.sendMessageTo}} * </label>
+                    <div class="col-sm-10">
+                      <input type="text" name="toId" ng-model="form.toId" class="form-control" required placeholder="{{phrase.sendMessageTo}}">
+                    </div>
+                  </div>
+                  <div class="form-group" ng-class="{'has-error': sendMessage.messageText.$invalid}">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Message</label>
+                    <div class="col-sm-10">
+                      <textarea name="messageText" class="form-control" ng-model="form.messageText" placeholder="{{phrase.message}}"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default" ng-disabled="sendMessage.$invalid">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>-->
+
+                    </section>
+                </div>
+                <div th:replace="admin/shared/footer"></div>

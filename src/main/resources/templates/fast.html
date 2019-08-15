@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div th:replace="admin/shared/header"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+     <section class="content">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+         
+                <div class="jumbotron" 
+                     style="padding: 30px; padding-left: 100px; margin: 20px;background: white">
+
+                    <h4>Please fill-in all required details to generate your
+                        college Time-Table.</h4>
+                    <hr>
+                
+                    <form  th:action="@{/admin/fast/faster}" method="POST" th:object="${form}">
+                     <div>  <label for="routinename">Routine Name</label>
+                         <input type="routinename" class="form-control" id="routinename" name="routinename"></div>
+                         <hr>
+<!--   //////////////////teacher input/////////////-->
+    <fieldset>
+        <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
+        <table>
+            <thead>
+                <tr>
+                    <th> Teacher</th>
+                    <th> Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="teachsub, itemStat : *{teachsubs}">
+                    <td><input th:field="*{teachsubs[__${itemStat.index}__].teachername}" /></td>
+                    <td><input th:field="*{teachsubs[__${itemStat.index}__].subject}" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+   
+                        
+                        
+<!--                        /////////////subject input///////////-->
+<br><br><br>
+      <hr>                             <div class="form-group">
+
+   <fieldset>
+
+        <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th> Class per week</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="formsubject, itemStat : *{formsubjects}">
+                    <td><input th:field="*{formsubjects[__${itemStat.index}__].sub}" /></td>
+                    <td><input th:field="*{formsubjects[__${itemStat.index}__].classperweek}" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+</div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+
+
+                </div>
+     
+ 
+            <div class="col-sm-2"></div>
+        </div>
+        </div>
+     </section>
+    </section>
+  </div>
+<div th:replace="admin/shared/footer"></div>

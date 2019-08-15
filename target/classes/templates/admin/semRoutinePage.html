@@ -1,0 +1,165 @@
+<div th:replace="admin/shared/header"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <center>
+                    
+                   <div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of  <span th:text="${course}"> </b></h1></span>
+     <h4><b> A: (<span th:text="${roomone}"></span>)</h4></b>
+     <div class="container" style="overflow-x: scroll">
+        
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="oneb : ${one}">
+                                            
+                                                <td><span th:text="${oneb.days}"></span></td>
+                                                <td><span th:text="${oneb.seven15eight05}"></span></td>
+                                                <td><span th:text="${oneb.eight05eight55}"></span></td>
+                                                <td><span th:text="${oneb.eight55nine45}"></span></td>
+                                                <td><span th:text="${oneb.nine45ten35}"></span></td>
+                                                <td><span th:text="${oneb.ten35eleven25}"></span></td>
+                                                <td><span th:text="${oneb.eleven5twelve15}"></span></td>
+                                                <td><span th:text="${oneb.twelve15one05}"></span></td>
+                                                <td><span th:text="${oneb.one5one50}"></span></td>
+                                                <td><span th:text="${oneb.one50two45}"></span></td>
+                                                <td><span th:text="${oneb.two45three35}"></span></td>
+                                           
+                                            </tr>
+                                        </tbody>
+                                    </table>
+         
+</div>
+     
+     <br><br>
+     <h4><b>B: (<span th:text="${roomtwo}"></span>)</h4></b>
+     <div class="container" style="overflow-x: scroll">
+         
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="oneb : ${two}">
+                                            
+                                                <td><span th:text="${oneb.days}"></span></td>
+                                                <td><span th:text="${oneb.seven15eight05}"></span></td>
+                                                <td><span th:text="${oneb.eight05eight55}"></span></td>
+                                                <td><span th:text="${oneb.eight55nine45}"></span></td>
+                                                <td><span th:text="${oneb.nine45ten35}"></span></td>
+                                                <td><span th:text="${oneb.ten35eleven25}"></span></td>
+                                                <td><span th:text="${oneb.eleven5twelve15}"></span></td>
+                                                <td><span th:text="${oneb.twelve15one05}"></span></td>
+                                                <td><span th:text="${oneb.one5one50}"></span></td>
+                                                <td><span th:text="${oneb.one50two45}"></span></td>
+                                                <td><span th:text="${oneb.two45three35}"></span></td>
+                                           
+                                            </tr>
+                                        </tbody>
+                                    </table>
+         
+</div>
+<!--     container closed-->
+     </div>
+                                    <!-- /input-group -->
+     
+                
+                </center>
+            </div>
+
+<!------------------------------------sem routine-----------------------------------------------------------------s->
+
+<!-- <div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of I/I</b></h1>
+     <div class="container" style="overflow-x: scroll">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="one : ${oneA}">
+                                            
+                                                <td><span th:text="${one.days}"></span></td>
+                                                <td><span th:text="${one.seven15eight05}"></span></td>
+                                                <td><span th:text="${one.eight05eight55}"></span></td>
+                                                <td><span th:text="${one.eight55nine45}"></span></td>
+                                                <td><span th:text="${one.nine45ten35}"></span></td>
+                                                <td><span th:text="${one.ten35eleven25}"></span></td>
+                                                <td><span th:text="${one.eleven5twelve15}"></span></td>
+                                                <td><span th:text="${one.twelve15one05}"></span></td>
+                                                <td><span th:text="${one.one5one50}"></span></td>
+                                                <td><span th:text="${one.one50two45}"></span></td>
+                                                <td><span th:text="${one.two45three35}"></span></td>
+                                           
+                                              <td><span th:text="${courses.departmentId}"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+</div>
+     container closed
+
+                                     /input-group 
+                                </div>-->
+
+            
+           
+        </div>
+    </section>
+  </div>
+<div th:replace="admin/shared/footer"></div>

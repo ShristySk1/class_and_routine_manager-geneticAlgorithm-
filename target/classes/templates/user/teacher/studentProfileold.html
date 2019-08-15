@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+    <section class="content">
+        <div class="container">
+        <div class="row">
+            <!--                    <h2>Profile</h2>-->
+
+            <div class="col-md-6 ">
+                 <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Complete Your Profile</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" method="post" action="#" th:action="#">
+                <div class="row">
+    <div class="col-25">
+      <label for="fname">First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    </div>
+  </div>
+                         
+                        <div class="col-25">
+                    
+                            <label>Name</label>
+                             </div>
+                        <div class="col-75">
+                            <input type="text" name="student_name"  required="required"/>
+                        </div>
+                         
+                        <div class="col-25">
+                            <label>Email</label>
+                                </div>
+                        <div class="col-75">
+                            <input type="text" name="student_email"  required="required"/>
+                        </div>
+                        
+                        <div class="col-25">
+                            <label>Contact no.</label>
+                             </div>
+                        <div class="col-75">
+                            <input type="number" name="student_contact"  required="required"/>
+                        </div>
+                      
+                        <div class="col-25">
+                            <label>Address</label>
+                             </div>
+                        <div class="col-75">
+                            <input type="text" name="student_address"  required="required"/>
+                        </div>
+                  
+                        <div class="col-25">
+                            <label>Batch</label>
+                             </div>
+                        <div class="col-75">
+                            <input type="number" name="student_batch"  required="required"/>
+                        </div>
+                 
+                        <div class="col-25">
+                  <label>Choose Course</label>
+                    </div>
+                        <div class="col-75">
+                  
+                    <select  >
+               <option th:value="I/I" name="course">I/I</option>
+  <option th:value="I/II" name="course">I/II</option>
+  <option th:value="II/I" name="course">II/I</option>
+  <option th:value="II/II" name="course">II/II</option>
+</select>
+                   
+                </div>
+                 
+                        <div class="col-25">
+                            <label>Section</label>
+                             </div>
+                        <div class="col-75">
+                            <select  >
+               <option th:value="I/I" name="course">I/I</option>
+  <option th:value="BCT-1A" name="section"></option>
+  <option th:value="II/I" name="section">II/I</option>
+  <option th:value="II/II" name="section">II/II</option>
+</select>  </div>
+                        
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Save</button>
+                 <a th:href="#" class="btn btn-danger">Back</a>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+
+              <!--  <div class="panel panel-default">
+                    <div class="panel-heading">  <h4 >Add Teacher</h4></div>
+                    <form method="post" action="/admin/teachers/save" th:action="@{/admin/teachers/save}" th:object="${teacher}">
+                       
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="teacher_name" class="form-control" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name="teacher_email" class="form-control" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact no.</label>
+                            <input type="number" name="teacher_contact" class="form-control" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input type="text" name="teacher_type" class="form-control" required="required"/>
+                        </div>
+                        <div class="form-inline">
+                            <label>Status</label>
+                            <label>
+                                <input type="radio" name="status" value="true"/>Active</label>
+                             <label>
+                                <input type="radio" name="status" value="false"/>Inactive</label>
+                           
+                        </div>
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <a th:href="@{/admin/teachers}" class="btn btn-danger">Back</a>
+                    </form>
+                       
+
+
+                    </div> 
+                </div>
+            </div>  -->
+            <script>
+                $(function () {
+                    $('#profile-image1').on('click', function () {
+                        $('#profile-image-upload').click();
+                    });
+                });
+            </script> 
+
+            <!----------------------------------------------------<sidebar>-----------              -->
+
+
+
+            <!--<-----------------------------------------------------</sidebar>-----------------      -->
+
+
+
+
+
+
+        </div>
+    </section>
+</div>
+
+        </body>
+        </html>

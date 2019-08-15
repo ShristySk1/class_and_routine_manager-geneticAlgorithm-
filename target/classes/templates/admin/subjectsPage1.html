@@ -1,0 +1,88 @@
+<div th:replace="admin/shared/header"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <section class="content">
+        	<div class="row">
+<!--                    <h2>Profile</h2>-->
+        <div class="col-md-2"></div>
+       <div class="col-md-7 ">
+
+<div class="panel panel-default">
+  <div class="panel-heading">  <h4 >Subjects Details</h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+          
+               
+           
+    
+               <div class="col-sm-12">
+                   <div class="pull-right">
+                                    <p>
+                                        <a th:href="@{/admin/subjects/addSubject}" class ="btn btn-primary btn-xs" >
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </a>
+                                    </p>
+                                </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Subject Name</th>
+                                              <th>Subject Code</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="subjects : ${Subjects}">
+                                            
+                                                <td><span th:text="${subjects.subjectId}"></span></td>
+                                                <td><span th:text="${subjects.subjectName}"></span></td>
+<td><span th:text="${subjects.subjectCode}"></span></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                    <!-- /input-group -->
+                                </div>
+
+
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+       
+            
+    </div> 
+    </div>
+</div>  
+    <script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+              </script> 
+       
+<!----------------------------------------------------<sidebar>-----------              -->
+              
+
+
+    </section>
+  </div>
+<div th:replace="admin/shared/footer"></div>

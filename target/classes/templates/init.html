@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div th:replace="admin/shared/header"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+     <section class="content">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+         
+                <div class="jumbotron" 
+                     style="padding: 30px; padding-left: 100px; margin: 20px;background: white">
+
+                    <h4>Please fill-in all required details to generate your
+                        college Time-Table.</h4>
+                    <hr>
+                    <form role="form" th:action="@{/admin/download/generate}" method="POST" name="form"
+                          id="form" th:object="${formvalue}">
+                        <div class="form-group">
+<!--                            <label for="semId">Choose Semester</label>-->
+<!--                            <div class="checkbox">
+
+                                <label th:each="semester : ${sem}"><input type="checkbox" th:field="${formvalue.semId}" th:value="${semester.coursesId}"><span th:text="${semester.coursesName}"></span></label>
+
+
+
+
+
+                            </div>-->
+                         
+                  
+
+                            <div class="form-group">
+                                <label for="semRoomNo">No. of section for each semester</label><input
+                                    type="number" class="form-control" 
+                                    oninput="sendInfo()" th:field="${formvalue.semRoomNo}" style="width: 20%" required>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="roomId">Choose ClassRoom </label>
+                            <div class="checkbox">
+
+                                <label th:each="rm : ${room}"><input type="checkbox" th:field="${formvalue.roomId}" th:value="${rm.RoomId}"><span th:text="${rm.roomId}"></span></label>
+
+
+
+                            </div>
+                        </div>
+                        <hr>
+                        <!--                        <div class="	form-group">
+                                                    <label for="hours">Slots or Periods of study (per day):</label> <input
+                                                        type="number" class="form-control" id="hours" name="hoursperday"
+                                                        style="width: 80%" oninput="sendInfo3()" required>
+                                                </div>
+                                                <div id="3"></div>
+                                                <hr>
+                        
+                                                <div class="form-group">
+                                                    <label for="break">Insert Break after period number (skip
+                                                        if no break):</label> <input type="number" class="form-control"
+                                                                                 id="break" name="breakslot" style="width: 80px">
+                                                </div>-->
+                        <!--                        <hr>-->
+                        <!--
+                                                <div class="form-group">
+                                                    <label for="days">No. of days (per week):</label> <input
+                                                        type="number" class="form-control" id="days" name="daysperweek"
+                                                        style="width: 80%" oninput="sendInfo5()" required>
+                                                </div>
+                                                <div id="5"></div>
+                                                <hr>
+                        
+                                                <div class="form-group">
+                                                    <label for="department">Department:</label> <input
+                                                        type="text" class="form-control" id="noteachers"
+                                                        oninput="sendInfo()" name="department" style="width: 80%" required>
+                                                </div>
+                                                <div id="1"></div>
+                                                <hr>
+                        
+                                                <div class="form-group">
+                                                    <label for="semno">No. of Semester:</label> <input
+                                                        type="number" class="form-control" id="nostgrp"
+                                                        oninput="sendInfo2()" name="semno" style="width: 80%"
+                                                        required>
+                                                </div>-->
+
+
+
+                        <button type="submit" class="btn btn-default">Submit</button>
+
+                    </form>
+
+
+                </div>
+     
+ 
+            <div class="col-sm-2"></div>
+        </div>
+        </div>
+     </section>
+    </section>
+  </div>
+<div th:replace="admin/shared/footer"></div>

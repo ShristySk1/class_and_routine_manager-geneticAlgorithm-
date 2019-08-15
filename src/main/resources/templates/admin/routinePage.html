@@ -1,0 +1,497 @@
+<div th:replace="admin/shared/header"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            
+<!--            <div class="col-sm-9">
+                <center> <img th:src="@{/img/routine.png}" height=80% width=80%/></center></div>-->
+
+<!--<h1> Please Click Download Button or Generate Button For Routine!!</h1> 
+                <div class="col-lg-12">
+                TABLE: LATEST ORDERS 
+          <div class="box box-info">-->
+<!--///////////////////editable table start-->
+<!-- Editable table -->
+<!--<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+  
+  <form method="post"  th:object="${timetable}" th:action="@{/admin/edit-table}">
+
+</div>-->
+<!-- Editable table -->
+<!--////////////////////////////routine page start-->
+ <div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of Room no 101</b></h1>
+     <div class="container" style="overflow-x: scroll">
+         <form method="post" th:object="${timetable}" th:action="@{/admin/edit-table/save}">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="onea,itemStat : ${one.listtimetable}">
+                                                <input type="hidden" th:name="|listtimetable[${itemStat.index}].id|" th:value="${onea.id}"></input>
+
+                                                <td><input th:name="|listtimetable[${itemStat.index}].days|" th:value="${onea.days}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].seven15eight05|" th:value="${onea.seven15eight05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight05eight55|" th:value="${onea.eight05eight55}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight55nine45|" th:value="${onea.eight55nine45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].nine45ten35|" th:value="${onea.nine45ten35}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].ten35eleven25|" th:value="${onea.ten35eleven25}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eleven5twelve15|" th:value="${onea.eleven5twelve15}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].twelve15one05|" th:value="${onea.twelve15one05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one5one50|" th:value="${onea.one5one50}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one50two45|" th:value="${onea.one50two45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].two45three35|" th:value="${onea.two45three35}"></input></td>
+                                                <td><input type=hidden th:name="|listtimetable[${itemStat.index}].roomno|" th:value="${onea.roomno}"></input></td>
+
+<!--                                              <td><span th:text="${courses.departmentId}"></span></td>-->
+                                            </tr>
+                                        <button type="submit" class="btn btn success">Save</button>
+                                        </tbody>
+                                    </table>
+         </form>
+</div>
+<!--     container closed-->
+     </div>
+                                    <!-- /input-group -->
+      <div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of Room no 104</b></h1>
+     <div class="container" style="overflow-x: scroll">
+         <form method="post" th:object="${timetable}" th:action="@{/admin/edit-table/save}">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="o,itemStat : ${one104.listtimetable}">
+                                                <input type="hidden" th:name="|listtimetable[${itemStat.index}].id|" th:value="${o.id}"></input>
+
+                                                <td><input th:name="|listtimetable[${itemStat.index}].days|" th:value="${o.days}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].seven15eight05|" th:value="${o.seven15eight05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight05eight55|" th:value="${o.eight05eight55}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight55nine45|" th:value="${o.eight55nine45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].nine45ten35|" th:value="${o.nine45ten35}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].ten35eleven25|" th:value="${o.ten35eleven25}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eleven5twelve15|" th:value="${o.eleven5twelve15}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].twelve15one05|" th:value="${o.twelve15one05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one5one50|" th:value="${o.one5one50}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one50two45|" th:value="${o.one50two45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].two45three35|" th:value="${o.two45three35}"></input></td>
+                                                <td><input type=hidden th:name="|listtimetable[${itemStat.index}].roomno|" th:value="${o.roomno}"></input></td>
+
+<!--                                              <td><span th:text="${courses.departmentId}"></span></td>-->
+                                            </tr>
+                                        <button type="submit" class="btn btn success">Save</button>
+                                        </tbody>
+                                    </table>
+         </form>
+</div>
+<!--     container closed-->
+     </div>
+<!--     container closed-->
+
+                                    <!-- /input-group -->
+                                
+<div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of Room no 201</b></h1>
+     <div class="container" style="overflow-x: scroll">
+         <form method="post" th:object="${timetable}" th:action="@{/admin/edit-table/save}">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="on,itemStat : ${one201.listtimetable}">
+                                                <input type="hidden" th:name="|listtimetable[${itemStat.index}].id|" th:value="${on.id}"></input>
+
+                                                <td><input th:name="|listtimetable[${itemStat.index}].days|" th:value="${on.days}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].seven15eight05|" th:value="${on.seven15eight05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight05eight55|" th:value="${on.eight05eight55}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight55nine45|" th:value="${on.eight55nine45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].nine45ten35|" th:value="${on.nine45ten35}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].ten35eleven25|" th:value="${on.ten35eleven25}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eleven5twelve15|" th:value="${on.eleven5twelve15}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].twelve15one05|" th:value="${on.twelve15one05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one5one50|" th:value="${on.one5one50}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one50two45|" th:value="${on.one50two45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].two45three35|" th:value="${on.two45three35}"></input></td>
+                                                <td><input type=hidden th:name="|listtimetable[${itemStat.index}].roomno|" th:value="${on.roomno}"></input></td>
+
+<!--                                              <td><span th:text="${courses.departmentId}"></span></td>-->
+                                            </tr>
+                                        <button type="submit" class="btn btn success">Save</button>
+                                        </tbody>
+                                    </table>
+         </form>
+</div>
+<!--     container closed-->
+     </div>
+            
+ <div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of Room no 202</b></h1>
+     <div class="container" style="overflow-x: scroll">
+         <form method="post" th:object="${timetable}" th:action="@{/admin/edit-table/save}">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="two,itemStat : ${one202.listtimetable}">
+                                                <input type="hidden" th:name="|listtimetable[${itemStat.index}].id|" th:value="${two.id}"></input>
+
+                                                <td><input th:name="|listtimetable[${itemStat.index}].days|" th:value="${two.days}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].seven15eight05|" th:value="${two.seven15eight05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight05eight55|" th:value="${two.eight05eight55}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight55nine45|" th:value="${two.eight55nine45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].nine45ten35|" th:value="${two.nine45ten35}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].ten35eleven25|" th:value="${two.ten35eleven25}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eleven5twelve15|" th:value="${two.eleven5twelve15}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].twelve15one05|" th:value="${two.twelve15one05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one5one50|" th:value="${two.one5one50}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one50two45|" th:value="${two.one50two45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].two45three35|" th:value="${two.two45three35}"></input></td>
+                                                <td><input type=hidden th:name="|listtimetable[${itemStat.index}].roomno|" th:value="${two.roomno}"></input></td>
+
+<!--                                              <td><span th:text="${courses.departmentId}"></span></td>-->
+                                            </tr>
+                                        <button type="submit" class="btn btn success">Save</button>
+                                        </tbody>
+                                    </table>
+         </form>
+</div>
+<!--     container closed-->
+     </div>
+            
+<!--///////////////////////////////////////////-->
+<div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of Room no 103</b></h1>
+     <div class="container" style="overflow-x: scroll">
+         <form method="post" th:object="${timetable}" th:action="@{/admin/edit-table/save}">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="oneothree,itemStat : ${one103.listtimetable}">
+                                                <input type="hidden" th:name="|listtimetable[${itemStat.index}].id|" th:value="${oneothree.id}"></input>
+
+                                                <td><input th:name="|listtimetable[${itemStat.index}].days|" th:value="${oneothree.days}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].seven15eight05|" th:value="${oneothree.seven15eight05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight05eight55|" th:value="${oneothree.eight05eight55}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight55nine45|" th:value="${oneothree.eight55nine45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].nine45ten35|" th:value="${oneothree.nine45ten35}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].ten35eleven25|" th:value="${oneothree.ten35eleven25}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eleven5twelve15|" th:value="${oneothree.eleven5twelve15}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].twelve15one05|" th:value="${oneothree.twelve15one05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one5one50|" th:value="${oneothree.one5one50}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one50two45|" th:value="${oneothree.one50two45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].two45three35|" th:value="${oneothree.two45three35}"></input></td>
+                                                <td><input type=hidden th:name="|listtimetable[${itemStat.index}].roomno|" th:value="${oneothree.roomno}"></input></td>
+
+<!--                                              <td><span th:text="${courses.departmentId}"></span></td>-->
+                                            </tr>
+                                        <button type="submit" class="btn btn success">Save</button>
+                                        </tbody>
+                                    </table>
+         </form>
+</div>
+<!--     container closed-->
+     </div>
+<div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of Room no 105</b></h1>
+     <div class="container" style="overflow-x: scroll">
+         <form method="post" th:object="${timetable}" th:action="@{/admin/edit-table/save}">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="oneofive,itemStat : ${one105.listtimetable}">
+                                                <input type="hidden" th:name="|listtimetable[${itemStat.index}].id|" th:value="${oneofive.id}"></input>
+
+                                                <td><input th:name="|listtimetable[${itemStat.index}].days|" th:value="${oneofive.days}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].seven15eight05|" th:value="${oneofive.seven15eight05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight05eight55|" th:value="${oneofive.eight05eight55}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eight55nine45|" th:value="${oneofive.eight55nine45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].nine45ten35|" th:value="${oneofive.nine45ten35}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].ten35eleven25|" th:value="${oneofive.ten35eleven25}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].eleven5twelve15|" th:value="${oneofive.eleven5twelve15}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].twelve15one05|" th:value="${oneofive.twelve15one05}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one5one50|" th:value="${oneofive.one5one50}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].one50two45|" th:value="${oneofive.one50two45}"></input></td>
+                                                <td><input th:name="|listtimetable[${itemStat.index}].two45three35|" th:value="${oneofive.two45three35}"></input></td>
+                                                <td><input type=hidden th:name="|listtimetable[${itemStat.index}].roomno|" th:value="${oneofive.roomno}"></input></td>
+
+<!--                                              <td><span th:text="${courses.departmentId}"></span></td>-->
+                                            </tr>
+                                        <button type="submit" class="btn btn success">Save</button>
+                                        </tbody>
+                                    </table>
+         </form>
+</div>
+<!--     container closed-->
+     </div>
+            
+<!--////////////////////////////////////////////////show routine////////////////////////              -->
+<!--            <div class="box-header with-border">
+              <h3 class="box-title">Class Routines</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>-->
+<!--///////////////////////////////////////////////////end routine///////////////////////////-->
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  <thead>
+                  <tr>
+                    <th>Semester</th>
+                    <th>Routines</th>
+                 
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      
+                    <td>
+                      1
+                    </td>
+                  <td><a th:href="@{/admin/routine}">View</a></td>
+                  </tr>
+                <tr>
+                      
+                    <td>
+                      2
+                    </td>
+                  <td><a th:href="@{/admin/routine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      3
+                    </td>
+                     <td><a th:href="@{/admin/routine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      4
+                    </td>
+                  <td><a th:href="@{/admin/routine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      5
+                    </td>
+              <td><a th:href="@{/admin/routine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      6
+                    </td>
+               <td><a th:href="@{/admin/routine}">View</a></td>
+                  </tr>
+                 
+               
+                 
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.table-responsive -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <a th:href="@{/admin/download}" class="btn btn-sm btn-info btn-flat pull-left">Generate Routine</a>
+              <a th:href="@{/admin/download}" class="btn btn-sm btn-default btn-flat pull-right">Download All Routines</a>
+            </div>
+            <!-- /.box-footer -->
+          </div>
+                </div>
+           
+        </div>
+    </section>
+  </div>
+  <script>
+  const $tableID = $('#table');
+  const $BTN = $('#export-btn');
+  const $EXPORT = $('#export');
+
+  const newTr = `
+ <tr class="hide">
+   <td class="pt-3-half" contenteditable="true">Example</td>
+   <td class="pt-3-half" contenteditable="true">Example</td>
+   <td class="pt-3-half" contenteditable="true">Example</td>
+   <td class="pt-3-half" contenteditable="true">Example</td>
+   <td class="pt-3-half" contenteditable="true">Example</td>
+   <td class="pt-3-half">
+     <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i></a></span>
+     <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i></a></span>
+   </td>
+   <td>
+     <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">Remove</button></span>
+   </td>
+ </tr>`;
+
+  $('.table-add').on('click', 'i', () => {
+
+    const $clone = $tableID.find('tbody tr').last().clone(true).removeClass('hide table-line');
+
+    if ($tableID.find('tbody tr').length === 0) {
+
+      $('tbody').append(newTr);
+    }
+
+    $tableID.find('table').append($clone);
+  });
+
+  $tableID.on('click', '.table-remove', function () {
+
+    $(this).parents('tr').detach();
+  });
+
+  $tableID.on('click', '.table-up', function () {
+
+    const $row = $(this).parents('tr');
+
+    if ($row.index() === 1) {
+      return;
+    }
+
+    $row.prev().before($row.get(0));
+  });
+
+  $tableID.on('click', '.table-down', function () {
+
+    const $row = $(this).parents('tr');
+    $row.next().after($row.get(0));
+  });
+
+  // A few jQuery helpers for exporting only
+  jQuery.fn.pop = [].pop;
+  jQuery.fn.shift = [].shift;
+
+  $BTN.on('click', () => {
+
+    const $rows = $tableID.find('tr:not(:hidden)');
+    const headers = [];
+    const data = [];
+
+    // Get the headers (add special header logic here)
+    $($rows.shift()).find('th:not(:empty)').each(function () {
+
+      headers.push($(this).text().toLowerCase());
+    });
+
+    // Turn all existing rows into a loopable array
+    $rows.each(function () {
+      const $td = $(this).find('td');
+      const h = {};
+
+      // Use the headers from earlier to name our hash keys
+      headers.forEach((header, i) => {
+
+        h[header] = $td.eq(i).text();
+      });
+
+      data.push(h);
+    });
+
+    // Output the result
+    $EXPORT.text(JSON.stringify(data));
+  });
+</script>
+<div th:replace="admin/shared/footer"></div>

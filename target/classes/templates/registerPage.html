@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+     
+    </head>
+    <body>
+        <!-- Include _menu.html -->
+    <th:block th:include="/_menu"></th:block>
+
+
+
+    <!-- /login?error=true -->
+    <div th:if="${#request.getParameter('error') == 'true'}"
+         style="color:red;margin:10px 0px;">
+        Login Failed!!!<br />
+        Reason :
+        <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+              th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+            Static summary
+        </span>
+
+    </div>
+
+
+	
+	
+
+  <!--  <div id="REGISTER">
+        <div class="container-fluid">
+            <div class="row col-lg-4 col-lg-offset-4" style="margin-top: 20px; background-color: #fff; padding: 20px; border: solid 1px #ddd;">
+                <div style="background-color: #337ab7; height: 50px; color:white; margin-top: 20px;">
+                     <p ><center><h2>Registration</h2></center></p><br>
+                </div>
+               
+                <form th:action="@{/registerUser}" method="post" th:object="${user}">
+                    <select type="text" name="role">
+                        <option value="disabled selected hidden">Role</option>
+                        <option  value="ROLE_TEACHER">Teacher</option>
+                        <option  value="ROLE_STUDENT">Student</option>
+                    </select>
+                    <input type="text" name="uname" placeholder="User name"><br>
+                    <input type="text" name="fname" placeholder="Full name"><br>
+                    <input type="password" name="password" placeholder="Password"><br>
+                  
+                    <input type="text" name="email" placeholder="Email"><br>
+                   
+               <!--     <select type="text" name="gender">
+                        <option value="disabled selected hidden">Gender</option>
+                        <option name="gender" value="male">male</option>
+                        <option name="gender" value="female">female</option>
+                    </select>	<BR>
+                    <button class="button" type="submit" name="signup" ><b>Sign Up</b>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>-->
+               
+            
+	 <div class="box">
+
+			
+                    <h2>Registration Form</h2>
+                               
+                    <form  th:action="@{/registerUser}" th:object="${user}" method="post" >
+			<!--  <div style="background-color: #337ab7; height: 50px; "> </div>-->
+                              
+                                <div class="inputbox" >
+					<select type="text" name="role" style="width:300px; height: 30px; border-radius: 12px; color:black">
+                        <option value="disabled selected hidden">Role</option>
+                        <option  value="ROLE_TEACHER">Teacher</option>
+                        <option  value="ROLE_STUDENT">Student</option>
+                                        </select><br>
+				</div>
+                               
+				<div class="inputbox" >
+					
+                                    <input  type="text" name="uname" required="" >
+                                     <label>User Name</label>          
+                                       
+				</div>
+				<div class="inputbox">
+					
+						 <input type="text" name="fname"  required="">
+                                                 <label>Full Name</label>
+                                                
+                                       
+				</div>
+				<div class="inputbox">
+					
+						  <input type="text" name="email"required="" >
+                                                  <label>Email</label>
+                                       
+				</div>
+				<div class="inputbox">
+					
+						 <input type="password" name="password" required="">
+                                                 <label>Password</label>
+                  
+					
+				</div>
+				
+                                <div class="inputbox">
+					
+						<button type="submit" class="btn btn-primary btn-block" style="width: 100px; height: 30px; border-radius: 12px;">Register</button>
+					
+				</div>
+				<span th:utext="${successMessage}"></span>
+				
+			</form>
+		
+	</div>
+              
+</body>
+
+</html>

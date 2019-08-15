@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+      <script src="/webjars/jquery/1.12.4/jquery.min.js"></script>
+              <link href="/webjars/bootstrap/3.3.7/css/bootstrap.theme.min.css" rel="stylesheet">
+      <script src="/webjars/bootstrap/3.3.7/bootstrap.min.js"></script>
+
+
+    </head>
+    <body>
+        <h1>Hello World! from spring boot resource page</h1>
+        <div class="container"> 
+        <ul>
+            <li th:each="c:${dayss}">
+                <span th:text="${c}"></span>
+            </li>
+        </ul>
+            
+            <ul>
+            <li th:each="k:${d}">
+                <span th:text="${k}"></span>
+            </li>
+        </ul>
+        </div>
+    </body>
+</html>

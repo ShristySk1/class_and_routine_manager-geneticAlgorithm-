@@ -1,0 +1,129 @@
+<div th:replace="admin/shared/header"></div>
+<!--<link href ="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link href ="/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet"/>
+<script src="/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Content Wrapper. Contains page content -->
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+            <small>admin</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <!--                    <h2>Profile</h2>-->
+
+        <div class="row">
+            <!--                    <h2>Profile</h2>-->
+
+
+
+                <div class="col-md-12 ">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">  <h4 >Student Profile</h4></div>
+                        <div class="panel-body">
+
+                            <div class="box box-info">
+
+                                <div class="box-body">
+                                    <div class="col-sm-12">
+                                        <span class="pull-right">
+                                            <p>
+                                               
+                                                <a th:href="@{/admin/student/delete}" class="btn-btn-danger btn-xs">
+                                                            <span class="glyphicon glyphicon-trash"></span>
+                                            </p>
+                                        </span>
+                                    
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Student Name</th>
+                                                    <th>Student Email</th>
+                                                    <th>Roll no.</th>
+                                                    
+
+                                                  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="std,iterator  : ${student}">
+                                                        <td><span th:text="${iterator.index+1}"></span></td>
+                                                    <td><span th:text="${std.studentName}"></span></td>
+                                                    <td><span th:text="${std.studentEmail}"></span></td>
+
+                                                    <td><span th:text="${std.rollno}"></span></td>
+                                                   
+                                                   
+
+                                                     <!--   <a th:href="@{'/admin/teachers/delete/'+${teacher.teacherId}}" class="btn-btn-danger btn-xs" onclick="return confirm('Are you sure to delete?');">
+                                                            <span class="glyphicon glyphicon-trash"></span>
+                                                        </a>-->
+
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                        <!-- /input-group -->
+                                    </div>
+
+
+
+                                    <div class="clearfix"></div>
+                                    <hr style="margin:5px 0 5px 0;">
+
+
+
+
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
+
+                            </div>
+                        </div>
+
+
+                    </div> 
+                </div>
+            </div>  
+            <script>
+                $(function () {
+                    $('#profile-image1').on('click', function () {
+                        $('#profile-image-upload').click();
+                    });
+                });
+            </script> 
+
+            <!----------------------------------------------------<sidebar>-----------              -->
+
+
+
+            <!--<-----------------------------------------------------</sidebar>-----------------      -->
+
+
+
+
+
+
+        </div>
+    </section>
+</div>
+
+<div th:replace="admin/shared/footer"></div>

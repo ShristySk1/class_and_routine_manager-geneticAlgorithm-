@@ -1,0 +1,119 @@
+<div th:replace="admin/shared/header2"></div>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            
+            <small>Teacher</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+
+
+            <!--////////////////////////////routine page start-->
+            <div class="col-sm-12" style="background-color: white">
+                <h1><b>Weekly Routine </b></h1>
+                <div class="container" >
+                    <h2><b><div th:text="${subject}"></div></h2></b>
+                    <table class="table table-striped">
+                        <h3><b> Monday</h3></b>
+                      
+                        <tbody>
+                            
+                            <tr th:each="oneb : ${mon}">
+                        <p th:if="${oneb.time}">
+                        <td><span th:text="${oneb.roomno}"></span></td>
+                        <td><span th:text="${oneb.time}"></span></td>
+                        
+                        </p> 
+
+                        </tr>
+
+                        </tbody></table>
+                    <table class="table table-striped">
+                        
+                        <h3><b>Tuesday</h3></b>
+                        
+                        <tbody>
+
+                           <tr th:each="oneb : ${tue}">
+                        <p th:if="${oneb.time}">
+
+
+                        <td><span th:text="${oneb.roomno}"></span>
+                           
+                             </td>
+                        <td><span th:text="${oneb.time}"></span>
+                        
+                        </p> 
+                        
+                         
+                        </tbody></table>
+                    <table class="table table-striped">
+                        <h3><b> Wednesday</h3></b>
+                     
+                        <tbody>
+                            <tr th:each="oneb : ${wed}">
+                        <p th:if="${oneb.time}">
+
+
+                        <td><span th:text="${oneb.roomno}"></span></td>
+                        <td><span th:text="${oneb.time}"></span></td>
+                        </p> 
+
+                        </tr>
+                        </tbody></table>
+                    <table class="table table-striped">
+                        <h3><b> Thursday</h3></b>
+                        
+                        <tbody>
+                            <tr th:each="oneb : ${thu}">
+                        <p th:if="${oneb.time}">
+
+
+                        <td><span th:text="${oneb.roomno}"></span></td>
+                        <td><span th:text="${oneb.time}"></span></td>
+                        </p> 
+
+                        </tr>
+                        </tbody></table>
+                    <table class="table table-striped">
+                          <h3><b>  Friday</h3></b>
+                        
+                        <tbody>
+                            <tr th:each="oneb : ${fri}">
+                        <p th:if="${oneb.time}">
+
+
+                        <td><span th:text="${oneb.roomno}"></span></td>
+                        <td><span th:text="${oneb.time}"></span></td>
+                        </p> 
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!--     container closed-->
+            </div>
+            <!-- /input-group -->
+
+            <!-- /.box-header -->
+
+
+            <!-- /.box-footer -->
+        </div>
+
+
+
+    </section>
+</div>
+
+<div th:replace="admin/shared/footer"></div>

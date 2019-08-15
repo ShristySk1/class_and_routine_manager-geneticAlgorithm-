@@ -1,0 +1,94 @@
+<div th:replace="admin/shared/header2"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>user</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <section class="content">
+        	<div class="row">
+<!--                    <h2>Profile</h2>-->
+        <div class="col-md-2"></div>
+       <div class="col-md-7 ">
+
+<div class="panel panel-default">
+    <div class="panel-heading">  <h4 th:each="course : ${courses}">Course: <span th:text="${course.coursesName}"></span></h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+          
+               
+           
+    
+               <div class="col-sm-12">
+                  
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Subject Name</th>
+                                              <th>Subject Code</th>
+
+                                             <th>Period per Week</th>
+                                                <th>Lab  </th>
+                                              <th>Action     </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="subjects : ${subjects}">
+                                            
+                                                <td><span th:text="${subjects.subjectId}"></span></td>
+                                                <td><span th:text="${subjects.subjectName}"></span></td>
+                                                <td><span th:text="${subjects.subjectCode}"></span></td>
+                                                <td><span th:text="${subjects.periodPerWeek}"></span></td>
+                                                 <td>
+                                                       
+                                                        <span th:if="${subjects.isLab}" class="btn btn-success">Yes</span>
+                                                        <span class="btn btn-danger" th:if="${not subjects.isLab}">No</span>
+                                                    </td>
+                                                
+                                                <td><a th:href="@{'/user/courses/courseSubTeacher/'+ ${subjects.subjectId}}" class="btn btn-primary">View Teachers</a></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                    <!-- /input-group -->
+                                </div>
+
+
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+       
+            
+    </div> 
+    </div>
+</div>  
+    <script>
+              $(function() {
+    $('#profile-image1').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});       
+              </script> 
+       
+<!----------------------------------------------------<sidebar>-----------              -->
+              
+
+
+    </section>
+  </div>
+<div th:replace="admin/shared/footer"></div>

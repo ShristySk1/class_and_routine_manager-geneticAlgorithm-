@@ -1,0 +1,158 @@
+<div th:replace="admin/shared/header"></div>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>admin</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-9">
+                <center>
+                    
+                    <img th:src="@{/img/routine.png}" height=80% width=80%/>
+                
+                </center>
+            </div>
+
+<!------------------------------------sem routine-----------------------------------------------------------------s->
+
+<!-- <div class="col-sm-12" style="background-color: white">
+     <h1><b>Routine of I/I</b></h1>
+     <div class="container" style="overflow-x: scroll">
+     <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Day</th>
+                                              <th>7:15-8:05</th>
+                                              <th>8:05-8:55</th>
+                                              <th>8:55-9:45</th>
+                                              <th>9:45-10:35</th>
+                                              <th>10:35-11:25</th>
+                                              <th>11:25-12:15</th>
+                                              <th>12:15-1:05</th>
+                                              <th>1:05-1:55</th>
+                                              <th>1:55-2:45</th>
+                                              <th>2:45-3:35</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="one : ${oneA}">
+                                            
+                                                <td><span th:text="${one.days}"></span></td>
+                                                <td><span th:text="${one.seven15eight05}"></span></td>
+                                                <td><span th:text="${one.eight05eight55}"></span></td>
+                                                <td><span th:text="${one.eight55nine45}"></span></td>
+                                                <td><span th:text="${one.nine45ten35}"></span></td>
+                                                <td><span th:text="${one.ten35eleven25}"></span></td>
+                                                <td><span th:text="${one.eleven5twelve15}"></span></td>
+                                                <td><span th:text="${one.twelve15one05}"></span></td>
+                                                <td><span th:text="${one.one5one50}"></span></td>
+                                                <td><span th:text="${one.one50two45}"></span></td>
+                                                <td><span th:text="${one.two45three35}"></span></td>
+                                           
+                                              <td><span th:text="${courses.departmentId}"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+</div>
+     container closed
+
+                                     /input-group 
+                                </div>-->
+
+                <div class="col-lg-3">
+               <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+              
+<!--////////////////////////////////////////////////show routine////////////////////////              -->
+            <div class="box-header with-border">
+              <h3 class="box-title">Class Routines</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+<!--///////////////////////////////////////////////////end routine///////////////////////////-->
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  <thead>
+                  <tr>
+                    <th>Semester</th>
+                    <th>Routines</th>
+                 
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      
+                    <td>
+                      1
+                    </td>
+                  <td><a th:href="@{/admin/semRoutine/{id}(id=1)}">View</a></td>
+                  </tr>
+                <tr>
+                      
+                    <td>
+                      2
+                    </td>
+                  <td><a th:href="@{/admin/semRoutine/{id}(id=2)}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      3
+                    </td>
+                     <td><a th:href="@{/admin/semRoutine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      4
+                    </td>
+                  <td><a th:href="@{/admin/semRoutine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      5
+                    </td>
+              <td><a th:href="@{/admin/semRoutine}">View</a></td>
+                  </tr>   <tr>
+                      
+                    <td>
+                      6
+                    </td>
+               <td><a th:href="@{/admin/semRoutine}">View</a></td>
+                  </tr>
+                 
+               
+                 
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.table-responsive -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <a th:href="@{/admin/download}" class="btn btn-sm btn-info btn-flat pull-left">Generate Routine</a>
+              <a th:href="@{/admin/routine}" class="btn btn-sm btn-default btn-flat pull-right">View All Routines</a>
+            </div>
+            <!-- /.box-footer -->
+          </div>
+                </div>
+           
+        </div>
+    </section>
+  </div>
+<div th:replace="admin/shared/footer"></div>

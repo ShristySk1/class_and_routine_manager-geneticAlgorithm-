@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Login</title>
+       <link rel="stylesheet" th:href="@{/css/style.css}">
+       <style>
+       .button {
+  
+  border: black;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 14px 40px;
+  
+}
+
+.button1 {background-color: #03a9f4;border-radius: 12px; /* Green */}
+.button2 {background-color: forestgreen;border-radius: 12px; /* Green */}
+</style>
+
+   </head>
+   <body>
+      <!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>
+       
+    
+       
+      <!-- /login?error=true -->
+      <div th:if="${#request.getParameter('error') == 'true'}"
+            style="color:red;margin:10px 0px;">
+         Login Failed!!!<br />
+         Reason :
+         <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+            th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Static summary
+         </span>
+            
+      </div>
+      <span style="color: blue;"th:utext="${successMessage}"></span>
+       <div class="box">
+		<h2>Login</h2>
+        <form  th:action ="@{/j_spring_security_check}"  method = "POST" name="f">
+                <div class="inputbox">
+
+                    <input type="text" name="username" required="">
+                    <label>Email ID</label>
+                </div>
+                <div class="inputbox">
+                    
+                    <input type="password" name="password" required="">
+                    <label>Password</label>
+                    
+                </div>
+         
+                <input type="submit" name="submit" value="Submit">
+                
+          
+                
+        </form>
+             
+                <h3> <b> <label><center> Don't have an account? &emsp;</center></label></b>
+                    <u> <b> <a th:href="@{/register}" style="text-decoration: none; " > &emsp;  Register Now!!!</a></b></h3></u>
+       
+       </div>
+   </body>
+    
+</html>
