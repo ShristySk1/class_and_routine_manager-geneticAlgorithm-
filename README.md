@@ -20,3 +20,6 @@ Includes----------------------------------
 -Routine generation.
 -Editable routine.
 
+
+Make changes in src/main/resources/appication.properties for configuration
+
